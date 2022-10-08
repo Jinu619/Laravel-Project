@@ -16,7 +16,7 @@
             <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
                 <!--begin::Item-->
                 <li class="breadcrumb-item text-white opacity-75">
-                    <a href="/dashboard" class="text-white text-hover-primary">Home</a>
+                    <a href="{{route('dashboard.index')}}" class="text-white text-hover-primary">Home</a>
                 </li>
                 <!--end::Item-->
                 <!--begin::Item-->
@@ -54,7 +54,11 @@
                     <!--begin: Pic-->
                     <div class="me-7 mb-4">
                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+                        @if (auth()->user()->avatar != null)
+                        <img src="{{auth()->user()->avatar}}" alt="image" />
+                        @else
                             <img src="images/{{auth()->user()->profile_photo}}" alt="image" />
+                        @endif
                             <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px"></div>
                         </div>
                     </div>
@@ -209,12 +213,12 @@
                 <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bolder">
                     <!--begin::Nav item-->
                     <li class="nav-item mt-2">
-                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/profile">Overview</a>
+                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="{{route('profile.index')}}">Overview</a>
                     </li>
                     <!--end::Nav item-->
                     <!--begin::Nav item-->
                     <li class="nav-item mt-2">
-                        <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="/setting">Settings</a>
+                        <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="{{route('setting.index')}}">Settings</a>
                     </li>
                     <!--end::Nav item-->
                 </ul>
@@ -250,7 +254,11 @@
                                 <!--begin::Image input-->
                                 <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('media/svg/blank-dark.svg')">
                                     <!--begin::Preview existing avatar-->
+                                    @if (auth()->user()->avatar != null)
+                                    <div class="image-input-wrapper w-125px h-125px" style="background-image: url(<?php echo auth()->user()->avatar?>)"></div>
+                                    @else
                                     <div class="image-input-wrapper w-125px h-125px" style="background-image: url(images/<?php echo auth()->user()->profile_photo?>)"></div>
+                                   @endif
                                     <!--end::Preview existing avatar-->
                                     <!--begin::Label-->
                                     <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">

@@ -47,7 +47,7 @@ Route::group(['middleware'=>'user_auth'],function (){
     //Tasks
     Route::resource('/tasks',TaskController::class);
     Route::POST('/tasks/{id}',[TaskController::class,'changestatus']);
-    Route::GET('/alltasks',[TaskController::class,'viewall']);
+    Route::GET('/alltasks',[TaskController::class,'viewall'])->name('alltasks.view');
 
     //profile
     Route::resource('/profile',ProfileController::class);

@@ -346,7 +346,7 @@
 												<!--end::Icon-->
 												<!--begin::Title-->
 												<div class="flex-grow-1 me-2">
-													<a href="/tasks" class="fw-bolder text-gray-800 text-hover-primary fs-6">{{$lt->taskname}}</a> <span class="badge badge-light-danger fs-8 fw-bolder m-5">Pending Task</span></h3>
+													<a href="{{route('tasks.index')}}" class="fw-bolder text-gray-800 text-hover-primary fs-6">{{$lt->taskname}}</a> <span class="badge badge-light-danger fs-8 fw-bolder m-5">Pending Task</span></h3>
 													@if(isset($lt))
 													<span class="text-muted fw-bold d-block">Due in {{now()->diffInDays($lt->todate)}} Days {{now()->diff($lt->todate)->h}} hour {{now()->diff($lt->todate)->i}} minitue</span>
 												@endif</div>
@@ -407,7 +407,7 @@
 												<!--end::Checkbox-->
 												<!--begin::Description-->
 												<div class="flex-grow-1">
-													<a href="/tasks" class="text-gray-800 text-hover-primary fw-bolder fs-6">{{$nt->title}}></a>
+													<a href="{{route('tasks.index')}}" class="text-gray-800 text-hover-primary fw-bolder fs-6">{{$nt->title}}></a>
 													<span class="text-muted fw-bold d-block">{{$nt->discription}} </span>
 												</div>
 												<!--end::Description-->
@@ -498,7 +498,7 @@
 																<div id="kt_table_widget_14_chart_1" class="h-50px mt-n8 pe-7" data-kt-chart-color="success"></div>
 															</td>
 															<td class="text-end">
-																<a href="/projects" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
+																<a href="{{route('projects.index')}}" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px">
 																	<!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
 																	<span class="svg-icon svg-icon-5 svg-icon-gray-700">
 																		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

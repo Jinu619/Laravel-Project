@@ -14,7 +14,7 @@
             <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
                 <!--begin::Item-->
                 <li class="breadcrumb-item text-white opacity-75">
-                    <a href="/dashboard" class="text-white text-hover-primary">Home</a>
+                    <a href="{{route('dashboard.index')}}" class="text-white text-hover-primary">Home</a>
                 </li>
                 <!--end::Item-->
                 <!--begin::Item-->
@@ -45,7 +45,11 @@
                     <!--begin: Pic-->
                     <div class="me-7 mb-4">
                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+                        @if (auth()->user()->avatar != null)
+                        <img src="{{auth()->user()->avatar}}" alt="image" />
+                        @else
                             <img src="images/{{auth()->user()->profile_photo}}" alt="image" />
+                        @endif
                             <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px"></div>
                         </div>
                     </div>
@@ -203,12 +207,12 @@
                 <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bolder">
                     <!--begin::Nav item-->
                     <li class="nav-item mt-2">
-                        <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="/profile">Overview</a>
+                        <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="{{route('profile.index')}}">Overview</a>
                     </li>
                     <!--end::Nav item-->
                     <!--begin::Nav item-->
                     <li class="nav-item mt-2">
-                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/setting">Settings</a>
+                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="{{route('setting.index')}}">Settings</a>
                     </li>
                     <!--end::Nav item-->                    
                 </ul>
@@ -226,7 +230,7 @@
                 </div>
                 <!--end::Card title-->
                 <!--begin::Action-->
-                <a href="/setting" class="btn btn-primary align-self-center">Edit Profile</a>
+                <a href="{{route('setting.index')}}" class="btn btn-primary align-self-center">Edit Profile</a>
                 <!--end::Action-->
             </div>
             <!--begin::Card header-->

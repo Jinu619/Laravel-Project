@@ -17,7 +17,7 @@
             <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
                 <!--begin::Item-->
                 <li class="breadcrumb-item text-white opacity-75">
-                    <a href="/dashboard" class="text-white text-hover-primary">Home</a>
+                    <a href="{{route('dashboard.index')}} class="text-white text-hover-primary">Home</a>
                 </li>
                 <!--end::Item-->
                 <!--begin::Item-->
@@ -26,7 +26,7 @@
                 </li>
                 <!--end::Item-->
                 <!--begin::Item-->
-                <li class="breadcrumb-item text-white opacity-75"><a href="/tasks">Tasks</a></li>
+                <li class="breadcrumb-item text-white opacity-75"><a href="{{route('tasks.index')}}">Tasks</a></li>
                 <!--end::Item-->
                 <li class="breadcrumb-item">
                     <span class="bullet bg-white opacity-75 w-5px h-2px"></span>
